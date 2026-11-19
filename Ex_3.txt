@@ -1,0 +1,23 @@
+# przejdź do katalogu domowego
+cd ~
+
+# utwórz pusty plik notatki.txt
+touch notatki.txt
+
+# skopiuj notatki.txt do katalog3
+cp notatki.txt test_katalog/katalog3/
+
+# wyświetl lokalizację pliku notatki.txt
+find ~ -name notatki.txt
+
+# skopiuj notatki.txt do notatki_kopia.txt w katalog3
+cp notatki.txt test_katalog/katalog3/notatki_kopia.txt
+
+# wyświetl pliki w katalog3 alfabetycznie z rozmiarami
+ls -lhA test_katalog/katalog3
+
+# zmień nazwę notatki.txt na zapiski.txt
+mv test_katalog/katalog3/notatki.txt test_katalog/katalog3/zapiski.txt
+
+# wyświetl pliki według daty modyfikacji
+ls -lt test_katalog/katalog3

@@ -1,0 +1,34 @@
+cd ~
+
+# utwórz plik z przykładowymi danymi
+echo -e "Biologia\nChemia\nFizyka\nMatematyka\n" > przykladowe_dane3.txt
+
+# skompresuj plik za pomocą gzip
+gzip przykladowe_dane3.txt
+
+# wyświetl zawartość skompresowanego pliku bez rozpakowywania
+zcat przykladowe_dane3.txt.gz
+
+# output do weryfikacji
+Biologia
+Chemia
+Fizyka
+Matematyka
+
+# przeglądaj zawartość skompresowanego pliku
+zmore przykladowe_dane3.txt.gz
+
+# output do weryfikacji
+Biologia
+Chemia
+Fizyka
+Matematyka
+
+# rozpakuj plik za pomocą gunzip
+gunzip przykladowe_dane3.txt.gz
+
+# sprawdź czy plik został rozpakowany
+ls przykladowe_dane3.txt
+
+# output do weryfikacji
+przykladowe_dane3.txt

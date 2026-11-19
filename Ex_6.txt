@@ -1,0 +1,73 @@
+cd ~
+
+# utwórz plik z sekwencjami FASTA
+echo -e ">GENE1\nATCGTACGTACGATCGATCGA\n>GENE2\nCGTACGATCAGCATCAGC\n>GENE3\nATCGTACGTACGGGGGGATCGA\n>GENE4\nGGGATCATCGACGATC\n>GENE5\nATGCGTACGTACGATCG\n>GENE6\nGATCAGCGGATCGATCG\n>GENE7\nCGTACGTACAGCATCGTACG" > ~/sekwencje_genowe.txt
+
+# wyświetl zawartość pliku
+cat sekwencje_genowe.txt
+
+# output do weryfikacji
+>GENE1
+ATCGTACGTACGATCGATCGA
+>GENE2
+CGTACGATCAGCATCAGC
+>GENE3
+ATCGTACGTACGGGGGGATCGA
+>GENE4
+GGGATCATCGACGATC
+>GENE5
+ATGCGTACGTACGATCG
+>GENE6
+GATCAGCGGATCGATCG
+>GENE7
+CGTACGTACAGCATCGTACG
+
+# znajdź linie zaczynające się od >
+grep '^>' sekwencje_genowe.txt
+
+# output do weryfikacji
+>GENE1
+>GENE2
+>GENE3
+>GENE4
+>GENE5
+>GENE6
+>GENE7
+
+# znajdź linie niezawierające ATCG
+grep -v 'ATCG' sekwencje_genowe.txt
+
+# output do weryfikacji
+>GENE1
+>GENE2
+CGTACGATCAGCATCAGC
+>GENE3
+>GENE4
+>GENE5
+>GENE6
+>GENE7
+
+# znajdź linie zaczynające się od CGTACG
+grep '^CGTACG' sekwencje_genowe.txt
+
+# output do weryfikacji
+CGTACGATCAGCATCAGC
+CGTACGTACAGCATCGTACG
+
+# znajdź linie zawierające cyfry
+grep '[0-9]' sekwencje_genowe.txt
+
+# output do weryfikacji
+>GENE1
+>GENE2
+>GENE3
+>GENE4
+>GENE5
+>GENE6
+>GENE7
+
+# wyszukaj wzorzec ATG rekurencyjnie w katalogu domowym
+grep -r 'ATG' ~
+
+# output do weryfikacji
+/home/ubuntu/sekwencje_genowe.txt:ATGCGTACGTACGATCG

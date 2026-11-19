@@ -1,0 +1,41 @@
+cd ~
+
+# utwórz plik dane.txt
+echo "Bioinformatyka to interdyscyplinarna dziedzina nauki." > dane.txt
+echo "Bioinformatyka łączy informatykę i biologię." >> dane.txt
+echo "W bioinformatyce analiza danych biologicznych odgrywa kluczową rolę." >> dane.txt
+echo "To jest komentarz, który nie będzie usunięty." >> dane.txt
+
+# wyświetl zawartość pliku
+cat dane.txt
+
+# output do weryfikacji
+Bioinformatyka to interdyscyplinarna dziedzina nauki.
+Bioinformatyka łączy informatykę i biologię.
+W bioinformatyce analiza danych biologicznych odgrywa kluczową rolę.
+To jest komentarz, który nie będzie usunięty.
+
+# zamień Bioinformatyka na Informatyka
+sed -i 's/Bioinformatyka/Informatyka/g' dane.txt
+
+# usuń linie zawierające słowo komentarz
+sed -i '/komentarz/d' dane.txt
+
+# wyświetl linie od 1 do 3
+sed -n '1,3p' dane.txt
+
+# output do weryfikacji
+Informatyka to interdyscyplinarna dziedzina nauki.
+Informatyka łączy informatykę i biologię.
+W bioinformatyce analiza danych biologicznych odgrywa kluczową rolę.
+
+# zamień wszystkie litery a na e i zapisz zmiany
+sed -i 's/a/e/g' dane.txt
+
+# sprawdź końcową zawartość pliku
+cat dane.txt
+
+# output do weryfikacji
+Informetyke to interdyscyplinerne dziedzine neuki.
+Informetyke łączy informetykę i biologię.
+W bioinformetyce enelize denych biologicznych odgrywe kluczową rolę.

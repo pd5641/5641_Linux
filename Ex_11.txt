@@ -1,0 +1,39 @@
+cd ~
+
+# sprawdź, czy istnieje plik plik_testowy.txt
+ls plik_testowy.txt
+
+# output do weryfikacji
+ls: cannot access 'plik_testowy.txt': No such file or directory
+
+# sprawdź kod powrotu polecenia
+echo $?
+
+# output do weryfikacji
+2
+
+# utwórz nowy katalog i przejdź do niego, jeśli został utworzony
+mkdir nowy_katalog && cd nowy_katalog
+
+# sprawdź aktualny katalog
+pwd
+
+# output do weryfikacji
+/home/ubuntu/nowy_katalog
+
+# wyświetl Witaj i listę plików niezależnie od siebie
+echo "Witaj"; ls -a
+
+# output do weryfikacji
+Witaj
+.
+..
+
+# uruchom sleep 10 w tle
+sleep 10 &
+
+# sprawdź zadanie działające w tle
+jobs -l
+
+# output do weryfikacji
+[1]+  2259 Running                 sleep 10 &

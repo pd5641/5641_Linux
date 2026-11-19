@@ -1,0 +1,55 @@
+cd ~
+
+# utwórz pusty plik
+touch plik_do_archiwizacji.txt
+
+# utwórz katalog
+mkdir Katalog_do_archiwizacji
+
+# skopiuj plik do katalogu
+cp plik_do_archiwizacji.txt Katalog_do_archiwizacji/
+
+# wyświetl zawartość katalogu
+ls -l Katalog_do_archiwizacji
+
+# output do weryfikacji
+total 0
+-rw-r--r-- 1 ubuntu ubuntu 0 Nov 15 15:51 plik_do_archiwizacji.txt
+
+# utwórz archiwum tar
+tar -cf archiwum.tar Katalog_do_archiwizacji/plik_do_archiwizacji.txt
+
+# sprawdź zawartość archiwum
+tar -tf archiwum.tar
+
+# output do weryfikacji
+Katalog_do_archiwizacji/plik_do_archiwizacji.txt
+
+# skompresuj archiwum
+gzip archiwum.tar
+
+# wyświetl zawartość katalogu
+ls
+
+# output do weryfikacji
+Katalog_do_archiwizacji
+Moje Katalogi
+archiwum.tar.gz
+katalog1
+link_symboliczny.txt
+notatki.txt
+plik_do_archiwizacji.txt
+sekwencje_genowe.txt
+test_katalog
+
+# rozpakuj archiwum gzip
+gzip -d archiwum.tar.gz
+
+# wypakuj zawartość archiwum tar
+tar -xf archiwum.tar
+
+# wyświetl zawartość rozpakowanego katalogu
+ls -l Katalog_do_archiwizacji
+
+total 0
+-rw-r--r-- 1 ubuntu ubuntu 0 Nov 15 15:51 plik_do_archiwizacji.txt

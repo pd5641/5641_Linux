@@ -1,0 +1,11 @@
+# oblicz średnią długość sekwencji DNA
+awk -F, '$2 == "DNA" {s += $3; n++} END {print "DNA:", s/n}' dane_genetyczne.txt
+
+# output do weryfikacji
+DNA: 210
+
+# oblicz średnią długość sekwencji RNA
+awk -F, '$2 == "RNA" {s += $3; n++} END {print "RNA:", s/n}' dane_genetyczne.txt
+
+# output do weryfikacji
+RNA: 210
